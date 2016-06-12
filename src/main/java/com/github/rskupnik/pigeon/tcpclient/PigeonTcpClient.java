@@ -42,8 +42,8 @@ public final class PigeonTcpClient implements PigeonClient {
     private final int port;
     private final String packageToScan;
 
-    private final Socket clientSocket;
-    private final Connection connection;
+    private Socket clientSocket;
+    private Connection connection;
     private final IncomingPacketHandleMode incomingPacketHandleMode;
     private final IncomingPacketQueue incomingPacketQueue;
     private final PacketHandler packetHandler;
@@ -64,7 +64,9 @@ public final class PigeonTcpClient implements PigeonClient {
         }
 
         AnnotationsScanner.getInstance().scan(packageToScan);
+    }
 
+    public void connect() throws PigeonException {
         try {
             clientSocket = new Socket(host, port);
         } catch (IOException e) {
