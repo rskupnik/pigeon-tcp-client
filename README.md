@@ -7,7 +7,7 @@ Pigeon is a small library for packet transmission for Java. This module handles 
 You build a PigeonTcpClient like so:
 
 ```
-Pigeon.newClient()
+PigeonTcpClient client = Pigeon.newClient()
     .withHost("localhost)
     .withPacketHandler(new PacketHandler() {
         @Override
@@ -16,6 +16,8 @@ Pigeon.newClient()
         }
     })
     .build();
+    
+client.connect();
 ```
 
 And at this point Pigeon will attempt a connection to localhost at the default port. Provided in the example are minimal required parameters for Pigeon to work - host and packet handler. The rest will be set to defaults.
@@ -133,6 +135,8 @@ PigeonTcpClient client = Pigeon.newClient()
     .withHost("localhost)
     .withIncomingPacketHandleMode(IncomingPacketHandleMode.QUEUE)
     .build();
+    
+client.connect();
     
 // Do this periodically in a separate thread
 List<Packet> packets = client.getIncomingPacketQueue().popAll();
