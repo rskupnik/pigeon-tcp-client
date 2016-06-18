@@ -4,7 +4,7 @@
 
   <groupId>com.github.rskupnik</groupId>
   <artifactId>pigeon-tcp-client</artifactId>
-  <version>1.0</version>
+  <version>1.2</version>
   <packaging>jar</packaging>
   <name>pigeon-tcp-client</name>
 
@@ -27,7 +27,7 @@
     <dependency>
       <groupId>com.github.rskupnik</groupId>
       <artifactId>pigeon-commons</artifactId>
-      <version>1.0</version>
+      <version>1.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
